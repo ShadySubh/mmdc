@@ -178,11 +178,11 @@ function Hero() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 bg-rose-50 border border-rose-200 text-rose-800 rounded-full px-4 py-1.5 mb-6 shadow-sm"
+          className="inline-flex items-center gap-2 bg-sky-50 border border-sky-100 text-sky-800 rounded-full px-4 py-1.5 mb-6 shadow-sm"
         >
-          <div className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
+          <div className="w-2 h-2 rounded-full bg-sky-500 animate-pulse" />
           <span className="text-[12px] sm:text-[13px] font-bold tracking-wide">
-            Limited Free Consultation Slots Left Today!
+            Now Accepting New Patients
           </span>
         </motion.div>
 
@@ -190,7 +190,7 @@ function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-[40px] leading-[1.1] tracking-tight sm:text-5xl md:text-6xl lg:text-[72px] font-extrabold text-gray-900 mb-6 max-w-[17ch] mx-auto"
+          className="text-[36px] leading-[1.05] tracking-tight sm:text-5xl md:text-6xl lg:text-[72px] font-extrabold text-gray-900 mb-5 max-w-[17ch] mx-auto px-2"
         >
           Guwahati&apos;s <br className="md:hidden" />
           <span className="text-sky-600">
@@ -213,9 +213,9 @@ function Hero() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-col items-center w-full px-2"
+          className="flex flex-col items-center w-full px-2 mt-2"
         >
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto px-2 sm:px-0">
             <a
               href={BOOKING_LINK}
               target="_blank"

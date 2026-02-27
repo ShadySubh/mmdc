@@ -74,7 +74,7 @@ function Navbar() {
 
   const links = [
     { label: "Why Us", href: "#differentiation" },
-    { label: "Treatments", href: "#services" },
+    { label: "Services", href: "/services" },
     { label: "Reviews", href: "#reviews" },
     { label: "Emergency", href: "#emergency" },
   ];
@@ -566,7 +566,7 @@ function Contact() {
             </a>
           </div>
 
-          <p className="text-center font-bold text-sky-200 mb-8 flex flex-col sm:flex-row items-center justify-center gap-2 text-[15px]">
+          <div className="text-center font-bold text-sky-200 mb-8 flex flex-col sm:flex-row items-center justify-center gap-2 text-[15px]">
             <div className="flex items-center gap-1">
               <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
               <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
@@ -575,7 +575,7 @@ function Contact() {
               <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
             </div>
             Rated 4.8 by 1,655+ patients
-          </p>
+          </div>
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 sm:gap-8 text-sky-100/80 text-[14px] bg-black/20 rounded-2xl p-5 md:p-6 w-full mx-auto border border-white/5">
             <a href={`tel:${PHONE_NUMBER}`} className="flex items-center gap-2 hover:text-white transition-colors active:scale-[0.98]">

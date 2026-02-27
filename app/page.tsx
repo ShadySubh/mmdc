@@ -47,7 +47,7 @@ const topServices = [
 
 const whyUs = [
   { icon: <Award className="w-5 h-5" />, title: "4.8★ on Google", desc: "1,655+ verified reviews." },
-  { icon: <Shield className="w-5 h-5" />, title: "100% Painless", desc: "Zero discomfort anaesthesia." },
+  { icon: <Shield className="w-5 h-5" />, title: "Almost Painless", desc: "Minimal discomfort anaesthesia." },
   { icon: <CheckCircle className="w-5 h-5" />, title: "Sterilised & Safe", desc: "ISO-grade sterilisation." },
   { icon: <Sparkles className="w-5 h-5" />, title: "Latest Tech", desc: "Digital X-rays & lasers." },
   { icon: <Clock className="w-5 h-5" />, title: "Flexible Timings", desc: "Open early & late." },
@@ -182,7 +182,7 @@ function Hero() {
         >
           <div className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
           <span className="text-[12px] sm:text-[13px] font-bold tracking-wide">
-            Only 3 Free Consultation Slots Left Today!
+            Limited Free Consultation Slots Left Today!
           </span>
         </motion.div>
 
@@ -294,7 +294,7 @@ function ComparisonSection() {
             </h3>
             <ul className="space-y-5">
               {[
-                "100% Painless injection techniques",
+                "Almost painless injection techniques",
                 "Hospital-grade Class-B Autoclave sterilization",
                 "Treated only by MDS Specialists",
                 "Completely transparent pricing, zero hidden fees",

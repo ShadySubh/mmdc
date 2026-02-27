@@ -553,16 +553,16 @@ function Contact() {
   return (
     <section id="contact" className="py-16 md:py-24 bg-gradient-to-br from-sky-900 to-slate-900 relative overflow-hidden">
       <div className="relative z-10 w-full max-w-4xl mx-auto px-5">
-        <div className="bg-white/5 backdrop-blur-2xl rounded-[32px] border border-white/10 p-8 sm:p-12 md:p-16 text-center shadow-2xl">
+        <div className="bg-white/5 backdrop-blur-2xl rounded-[32px] border border-white/10 p-6 sm:p-12 md:p-16 text-center shadow-2xl">
           <h2 className="text-[32px] sm:text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight leading-[1.1]">
             Ready for your <br />
             <span className="text-sky-300">Perfect Smile?</span>
           </h2>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <a href={BOOKING_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-sky-400 hover:bg-sky-300 text-sky-950 font-bold px-8 py-4 rounded-full text-[16px] active:scale-95 transition-all shadow-[0_8px_30px_rgb(56,189,248,0.2)]">
-              <Calendar className="w-5 h-5" />
-              Speak With a Specialist Today
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 w-full">
+            <a href={BOOKING_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full sm:w-auto gap-2 bg-sky-400 hover:bg-sky-300 text-sky-950 font-bold px-5 sm:px-8 py-4 rounded-full text-[15px] sm:text-[16px] active:scale-95 transition-all shadow-[0_8px_30px_rgb(56,189,248,0.2)]">
+              <Calendar className="w-5 h-5 flex-shrink-0" />
+              <span className="truncate">Speak With a Specialist Today</span>
             </a>
           </div>
 
@@ -581,14 +581,14 @@ function Contact() {
             Rated 4.8 by 1,655+ patients
           </div>
 
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 sm:gap-8 text-sky-100/80 text-[14px] bg-black/20 rounded-2xl p-5 md:p-6 w-full mx-auto border border-white/5">
-            <a href={`tel:${PHONE_NUMBER}`} className="flex items-center gap-2 hover:text-white transition-colors active:scale-[0.98]">
-              <Phone className="w-4 h-4 text-sky-400" /> {PHONE_NUMBER}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-3 sm:gap-8 text-sky-100/80 text-[13px] sm:text-[14px] bg-black/20 rounded-2xl p-4 sm:p-5 md:p-6 w-full mx-auto border border-white/5">
+            <a href={`tel:${PHONE_NUMBER}`} className="flex items-center gap-2 hover:text-white transition-colors active:scale-[0.98] py-2 md:py-0">
+              <Phone className="w-4 h-4 text-sky-400 flex-shrink-0" /> {PHONE_NUMBER}
             </a>
             <div className="hidden md:block w-px h-6 bg-white/20"></div>
-            <a href={MAPS_LINK} target="_blank" rel="noopener noreferrer" className="flex items-start md:items-center justify-center gap-2 hover:text-white transition-colors text-center sm:text-left active:scale-[0.98]">
+            <a href={MAPS_LINK} target="_blank" rel="noopener noreferrer" className="flex items-start md:items-center justify-center gap-2 hover:text-white transition-colors text-center sm:text-left active:scale-[0.98] w-full md:w-auto">
               <MapPin className="w-4 h-4 mt-0.5 md:mt-0 flex-shrink-0 text-sky-400" />
-              <span className="line-clamp-2 md:line-clamp-1 max-w-[300px]">{ADDRESS}</span>
+              <span className="text-balance leading-snug break-words max-w-full">{ADDRESS}</span>
             </a>
           </div>
         </div>

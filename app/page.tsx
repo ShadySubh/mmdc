@@ -313,12 +313,12 @@ function ComparisonSection() {
           {/* Them (Standard Clinics) */}
           <div className="bg-gray-50 rounded-[24px] border border-gray-200 p-6 sm:p-8 relative">
             <h3 className="text-2xl font-bold text-gray-600 mb-6 flex items-center gap-2">
-              <X className="text-gray-400 w-6 h-6" /> Standard Clinics
+              <X className="text-gray-400 w-6 h-6" /> Typical Clinics
             </h3>
             <ul className="space-y-5">
               {[
                 "Standard syringes that cause discomfort",
-                "Basic boiling or UV box cleaning",
+                "Basic sterilization processes",
                 "Often treated by general dentists",
                 "Unclear estimates with surprise bills",
                 "Outdated or basic dental equipment"
@@ -338,7 +338,7 @@ function ComparisonSection() {
         <div className="mt-12 text-center flex flex-col items-center">
           <p className="text-sky-700 font-bold mb-4 text-[14px]">
             <Clock className="w-4 h-4 inline-block mr-1.5 align-text-bottom" />
-            Limited Time: Free Consultation ends soon!
+            Complimentary consultation available for a limited number of new patients each month.
           </p>
           <a
             href={BOOKING_LINK}
@@ -562,9 +562,13 @@ function Contact() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <a href={BOOKING_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-sky-400 hover:bg-sky-300 text-sky-950 font-bold px-8 py-4 rounded-full text-[16px] active:scale-95 transition-all shadow-[0_8px_30px_rgb(56,189,248,0.2)]">
               <Calendar className="w-5 h-5" />
-              Book Free Consultation
+              Speak With a Specialist Today
             </a>
           </div>
+
+          <p className="text-sky-200/90 text-[14px] font-medium mb-6 -mt-3">
+            Trusted by Families Across Guwahati for 10+ Years
+          </p>
 
           <div className="text-center font-bold text-sky-200 mb-8 flex flex-col sm:flex-row items-center justify-center gap-2 text-[15px]">
             <div className="flex items-center gap-1">

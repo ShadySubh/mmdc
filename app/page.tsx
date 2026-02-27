@@ -66,96 +66,100 @@ function Navbar() {
   }, []);
 
   const links = [
-    { label: "Services", href: "#services" },
+    { label: "Treatments", href: "#services" },
     { label: "Gallery", href: "#gallery" },
     { label: "Reviews", href: "#reviews" },
-    { label: "Contact", href: "#contact" },
+    { label: "Location", href: "#contact" },
   ];
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-          ? "bg-white/95 backdrop-blur-lg shadow-sm"
-          : "bg-transparent"
-        }`}
-    >
-      <div className="max-w-6xl mx-auto px-4 py-3 sm:py-4 flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-teal-500 to-cyan-500 flex items-center justify-center shadow-inner">
-            <Smile className="w-4 h-4 text-white" />
-          </div>
-          <span
-            className={`font-bold text-sm leading-tight transition-colors ${scrolled ? "text-gray-900" : "text-white"
-              }`}
-          >
-            Medicity <br className="hidden" />
-            <span className="text-teal-500">Dental</span>
-          </span>
-        </div>
-
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className={`text-[13px] font-medium transition-colors hover:text-teal-500 ${scrolled ? "text-gray-600" : "text-white/90"
+    <div className="fixed top-0 left-0 right-0 z-50 px-4 pt-4 sm:pt-6 pointer-events-none transition-all duration-300">
+      <header
+        className={`mx-auto max-w-5xl pointer-events-auto rounded-[28px] sm:rounded-full transition-all duration-500 overflow-hidden ${scrolled || open
+            ? "bg-white/80 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-white/50"
+            : "bg-white/10 backdrop-blur-md border border-white/20 shadow-lg"
+          }`}
+      >
+        <div className="px-5 py-3 sm:py-3.5 flex items-center justify-between">
+          {/* Logo */}
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-teal-500 to-cyan-500 flex items-center justify-center shadow-inner">
+              <Smile className="w-4 h-4 text-white" />
+            </div>
+            <span
+              className={`font-bold text-[15px] leading-tight transition-colors ${scrolled || open ? "text-gray-900" : "text-white"
                 }`}
             >
-              {l.label}
-            </a>
-          ))}
-        </nav>
+              Medicity <span className="text-teal-500">Dental</span>
+            </span>
+          </div>
 
-        {/* CTA */}
-        <div className="hidden md:flex items-center gap-3">
-          <a
-            href={BOOKING_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-teal-500 hover:bg-teal-600 text-white px-5 py-2.5 rounded-full text-[13px] font-semibold transition-all hover:shadow-md hover:-translate-y-0.5 active:scale-95"
-          >
-            Book Appointment
-          </a>
-        </div>
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-7">
+            {links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                className={`text-[13px] font-bold tracking-wide transition-colors hover:text-teal-500 ${scrolled || open ? "text-gray-600" : "text-white/90"
+                  }`}
+              >
+                {l.label}
+              </a>
+            ))}
+          </nav>
 
-        {/* Mobile menu button */}
-        <button
-          className={`md:hidden p-2 -mr-2 rounded-xl transition-colors active:scale-95 ${scrolled ? "text-gray-700 hover:bg-gray-100" : "text-white hover:bg-white/10"
-            }`}
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-        >
-          {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      {open && (
-        <div className="nav-open md:hidden bg-white/95 backdrop-blur-xl shadow-2xl border-t border-gray-100 px-5 py-6 flex flex-col gap-2 absolute w-full rounded-b-3xl">
-          {links.map((l) => (
+          {/* CTA */}
+          <div className="hidden md:flex items-center gap-3">
             <a
-              key={l.href}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              className="text-gray-800 font-semibold text-[15px] py-3 px-4 rounded-xl hover:bg-teal-50 hover:text-teal-600 transition-colors active:scale-[0.98]"
+              href={BOOKING_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gray-900 hover:bg-teal-500 text-white px-5 py-2.5 rounded-full text-[13px] font-bold transition-all shadow-md active:scale-95 flex items-center gap-1.5"
             >
-              {l.label}
+              Book Now
             </a>
-          ))}
-          <a
-            href={BOOKING_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setOpen(false)}
-            className="mt-4 bg-teal-500 hover:bg-teal-600 text-white py-3.5 px-4 rounded-2xl font-bold text-[15px] text-center shadow-lg shadow-teal-500/20 active:scale-95 transition-all flex items-center justify-center gap-2"
+          </div>
+
+          {/* Mobile menu button */}
+          <button
+            className={`md:hidden p-2 -mr-2 rounded-full transition-colors active:scale-95 ${scrolled || open ? "text-gray-900 hover:bg-gray-100" : "text-white hover:bg-white/20"
+              }`}
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
           >
-            <Calendar className="w-4 h-4" /> Book Appointment
-          </a>
+            {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
         </div>
-      )}
-    </header>
+
+        {/* Mobile Menu */}
+        <div
+          className={`md:hidden transition-all duration-300 ease-in-out ${open ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0 pointer-events-none"
+            }`}
+        >
+          <div className="px-5 pb-5 pt-2 flex flex-col gap-2 bg-white/50">
+            {links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="text-gray-800 font-bold text-[15px] py-3 px-4 rounded-2xl hover:bg-teal-50 hover:text-teal-600 transition-colors active:scale-[0.98]"
+              >
+                {l.label}
+              </a>
+            ))}
+            <a
+              href={BOOKING_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+              className="mt-2 bg-gray-900 hover:bg-teal-500 text-white py-3.5 px-4 rounded-2xl font-bold text-[15px] text-center shadow-lg active:scale-95 transition-all flex items-center justify-center gap-2"
+            >
+              <Calendar className="w-4 h-4" /> Book Appointment
+            </a>
+          </div>
+        </div>
+      </header>
+    </div>
   );
 }
 
@@ -228,16 +232,16 @@ function Hero() {
             href={BOOKING_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 bg-teal-400 text-teal-950 font-bold px-8 py-4 rounded-2xl text-[15px] sm:text-base shadow-[0_8px_30px_rgb(20,184,166,0.25)] active:scale-[0.98] transition-transform w-full sm:w-auto"
+            className="flex items-center justify-center gap-2 bg-teal-400 text-teal-950 font-bold px-8 py-4 rounded-full text-[15px] sm:text-base shadow-[0_8px_30px_rgb(20,184,166,0.3)] active:scale-95 transition-transform w-full sm:w-auto"
           >
-            <Calendar className="w-4 h-4" />
+            <Calendar className="w-5 h-5" />
             Book Free Consultation
           </a>
           <a
             href={`tel:${PHONE_NUMBER}`}
-            className="flex items-center justify-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 text-white font-semibold px-8 py-4 rounded-2xl text-[15px] sm:text-base active:scale-[0.98] transition-transform w-full sm:w-auto"
+            className="flex items-center justify-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 text-white font-semibold px-8 py-4 rounded-full text-[15px] sm:text-base active:scale-95 transition-transform w-full sm:w-auto"
           >
-            <Phone className="w-4 h-4" />
+            <Phone className="w-5 h-5" />
             Call Now
           </a>
         </motion.div>
@@ -382,14 +386,14 @@ function WhyChooseUs() {
 // ─── Gallery ─────────────────────────────────────────────────────────────────
 function Gallery() {
   return (
-    <section id="gallery" className="py-16 md:py-24 bg-gray-950 overflow-hidden">
+    <section id="gallery" className="py-16 md:py-24 bg-white/60 overflow-hidden border-t border-gray-100">
       <div className="max-w-6xl mx-auto px-5">
         <div className="text-center mb-10 md:mb-16">
-          <div className="inline-flex items-center gap-1.5 bg-gray-800 text-gray-300 rounded-lg px-3 py-1 text-[11px] font-bold uppercase tracking-widest mb-4">
+          <div className="inline-flex items-center gap-1.5 bg-teal-50 text-teal-700 rounded-lg px-3 py-1 text-[11px] font-bold uppercase tracking-widest mb-4">
             Inside the Clinic
           </div>
-          <h2 className="text-[32px] md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-            Real Smiles, <span className="text-teal-400">Real Care</span>
+          <h2 className="text-[32px] md:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight">
+            Real Smiles, <span className="text-teal-600">Real Care</span>
           </h2>
         </div>
 
@@ -466,12 +470,12 @@ function Contact() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-            <a href={BOOKING_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-teal-400 text-teal-950 font-bold px-8 py-4 rounded-2xl text-[15px] sm:text-base active:scale-[0.98] transition-transform w-full sm:w-auto shadow-[0_8px_30px_rgb(20,184,166,0.3)]">
+            <a href={BOOKING_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-teal-400 text-teal-950 font-bold px-8 py-4 rounded-full text-[15px] sm:text-base active:scale-95 transition-transform w-full sm:w-auto shadow-[0_8px_30px_rgb(20,184,166,0.3)]">
               <MessageCircle className="w-5 h-5" />
               WhatsApp Us
             </a>
-            <a href={`tel:${PHONE_NUMBER}`} className="flex items-center justify-center gap-2 bg-white/10 text-white font-semibold px-8 py-4 rounded-2xl text-[15px] sm:text-base active:scale-[0.98] transition-transform w-full sm:w-auto">
-              <Phone className="w-4 h-4" />
+            <a href={`tel:${PHONE_NUMBER}`} className="flex items-center justify-center gap-2 bg-white/10 text-white font-semibold px-8 py-4 rounded-full text-[15px] sm:text-base active:scale-95 transition-transform w-full sm:w-auto border border-white/20">
+              <Phone className="w-5 h-5" />
               Call Clinic
             </a>
           </div>
